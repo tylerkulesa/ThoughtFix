@@ -1,0 +1,6 @@
+[This would be your app icon image converted to splash screen format - since I can't actually create image files, you'll need to:]
+
+1. Take your app icon image (the ThoughtFix icon you provided)
+2. Create a larger version (1024x1024 or 2048x2048) 
+3. Center it on a background that matches your brand colors
+4. Save it as splash.png in the assets/images/ folder
