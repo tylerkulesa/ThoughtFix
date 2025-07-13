@@ -3,7 +3,7 @@ const OPENAI_API_KEY = process.env.EXPO_PUBLIC_OPENAI_API_KEY;
 const OPENAI_API_URL = 'https://api.openai.com/v1/chat/completions';
 
 if (!OPENAI_API_KEY) {
-  console.warn('OpenAI API key not found. Please set EXPO_PUBLIC_OPENAI_API_KEY in your .env file');
+  console.error('OpenAI API key not found. Please set EXPO_PUBLIC_OPENAI_API_KEY in your .env file with a valid API key from https://platform.openai.com/account/api-keys');
 }
 
 export interface OpenAIMessage {
