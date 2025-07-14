@@ -1,4 +1,5 @@
 import { supabase } from './supabase';
+import * as Linking from 'expo-linking';
 
 export interface CheckoutSessionParams {
   priceId: string;
@@ -10,8 +11,8 @@ export interface CheckoutSessionParams {
 export async function createCheckoutSession({
   priceId,
   mode,
-  successUrl = `${window.location.origin}/success`,
-  cancelUrl = `${window.location.origin}`,
+  successUrl = Linking.createURL('/success'),
+  cancelUrl = Linking.createURL('/'),
 }: CheckoutSessionParams) {
   try {
     const { data: { session } } = await supabase.auth.getSession();

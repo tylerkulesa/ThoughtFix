@@ -9,6 +9,7 @@ import {
   ActivityIndicator,
   Linking,
 } from 'react-native';
+import * as ExpoLinking from 'expo-linking';
 import { Crown, Zap, Star, Shield } from 'lucide-react-native';
 import { createCheckoutSession } from '@/lib/stripe';
 import { getPremiumProduct } from '@/src/stripe-config';
@@ -48,8 +49,8 @@ export default function PremiumUpgradeModal({
       const { url } = await createCheckoutSession({
         priceId: premiumProduct.priceId,
         mode: premiumProduct.mode,
-        successUrl: `${window.location.origin}/success`,
-        cancelUrl: window.location.href,
+        successUrl: ExpoLinking.createURL('/success'),
+        cancelUrl: ExpoLinking.createURL('/'),
       });
 
       if (url) {
